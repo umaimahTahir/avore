@@ -9,12 +9,12 @@
 
     <title>Avore</title>
 </head>
-    
+
 <body>
-    <nav>
-        <a href=index.html>HOME</a>    
-    </nav>
-    
+<?php
+include 'nav.php';
+?>
+
 </body>
 
 <!-- Latest compiled and minified JavaScript -->
