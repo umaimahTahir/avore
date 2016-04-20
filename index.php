@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
     <?php include 'databaseConnect\connect.php'?>
     <!--Contains all links for Bootstrap to be used-->
     <?php include 'includes\header.php'?>
-    </head>
 
-<body>
 
-<?php include 'includes\nav.php'; ?>
+
 
 <div class="jumbotron">
   <h1>Diversity Personafied</h1>
@@ -56,6 +52,4 @@
     </div>
 </div>
     </div>
-    </body>
-
-</html>
+<?php include 'includes\footer.php'?>
