@@ -23,10 +23,15 @@
             margin-bottom: -20px;
         }
 
-        .jumbotron {
-            margin-top: -20px;
-        }
 
+        .container,.jumbotron{
+            background-color:gainsboro;
+            margin-top:-20px;
+
+        }
+        .jumbotron{
+            margin-top: 0px;
+        }
         * {
             margin: 0;
         }
