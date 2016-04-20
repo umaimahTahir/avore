@@ -1,13 +1,10 @@
- <?php include 'includes\header.php'?>
-<?php include 'includes\nav.php'; ?>
+<?php include 'includes\header.php'?>
 
-<html>
-<body>
-<div class="jumbotron">
-    <p>Policy page</p>
-    </div>
-    <div class="container">
+    <div class="jumbotron" >
+        <div class="container">
+        <p>Policy page</p>
         <p>We do not take returned items</p>
+        </div>
+
+
     </div>
-    </body>
-<html>
