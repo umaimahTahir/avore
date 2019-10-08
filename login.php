@@ -1,31 +1,44 @@
+<?php
+include 'core/init.php';
 
-<?php include 'includes/header.php'?>
+if (empty($_POST) === false) {
+   $username = $_POST['username'];
+   $password = $_POST['password'];
+
+	if (empty($username) === true || empty($password) === true) {
+                $errors[] = 'you need to enter username and password';
+	}   
+   else if (user_exists($username) === false) {
+		$errors[] = 'we can\'t find that username';
+	}
+   else if (user_active($username) === false ) {
+                $errors[] = 'You haven\'t activated your account!';
+        }
+ 
+   else {
+        $login = login($username, $password);
+        echo $username;
+	if ($login === false) {
+		$errors[] = 'That username or password is incorrect';
+	} 
+	
+	else {
+        
+		echo 'okay!';
+           // set the user session
+        $_SESSION["loggedin"]=true;   
+        header('Location: index.php');
+        // redirect user to home
+ 	}
+        	  
+
+} 
+	
+    print_r($errors);
+	
+}
 
 
 
 
-<div class="body">
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" size="30">
-</div>
-
-<div class="input-group">
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-  <span class="input-group-addon" id="basic-addon2">@example.com</span>
-</div>
-
-<div class="input-group">
-  <span class="input-group-addon">$</span>
-  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-  <span class="input-group-addon">.00</span>
-</div>
-
-<label for="basic-url">Your vanity URL</label>
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-</div>
-</div>
-
-<?php include 'includes\footer.php' ?>
+?>
